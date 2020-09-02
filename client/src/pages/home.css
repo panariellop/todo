@@ -1,0 +1,43 @@
+.home-container h1{
+  text-align: center;
+}
+.todo-container{
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(232, 232, 232);
+  border-radius: 7px;
+  padding: 15px;
+  margin-top: 30px
+}
+
+.saveTodos-btn{
+  width: 50px;
+  font-size: 20px;
+  background-color: rgb(64, 213, 101);
+  padding: 3px;
+  border-radius: 7px;
+  border: transparent;
+  transition: 0.4s;
+}
+
+.item-container{
+
+}
+.item-container h3:hover{
+  cursor:text;
+}
+
+.item-delete-btn button{
+  display: inline-block;
+  float: right;
+}
+
+.saveTodos-btn:hover{
+  cursor:pointer;
+  background-color: rgb(152, 238, 0);
+}
+
+.saveTodos-btn:focus{
+  outline: none;
+}
