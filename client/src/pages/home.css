@@ -5,39 +5,103 @@
   width: 800px;
   margin-left: auto;
   margin-right: auto;
-  background-color: rgb(232, 232, 232);
+  background-color: rgb(240, 240, 240);
   border-radius: 7px;
   padding: 15px;
   margin-top: 30px
 }
 
-.saveTodos-btn{
-  width: 50px;
-  font-size: 20px;
-  background-color: rgb(64, 213, 101);
-  padding: 3px;
-  border-radius: 7px;
-  border: transparent;
+.todo-container button{
+  font-size: 15px;
+  border: none; 
+  border-radius: 7px; 
+  padding: 5px;
+  color: blue; 
   transition: 0.4s;
+}
+.todo-container button:hover{
+  cursor: pointer; 
+  background-color: lightgrey
+}
+.todo-container button:focus{
+  outline: none; 
 }
 
 .item-container{
-
+  display: grid; 
+  grid-template-columns: auto 50px; 
 }
+
+.item-input{
+  grid-column-start: 1;
+}
+
+.item-input p{
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .item-container h3:hover{
-  cursor:text;
+  cursor: text;
 }
 
-.item-delete-btn button{
-  display: inline-block;
-  float: right;
+.item-container:hover{
+  background-color: rgb(216, 216, 216)s
 }
 
-.saveTodos-btn:hover{
-  cursor:pointer;
-  background-color: rgb(152, 238, 0);
+.item-input input{
+  background-color:  rgb(215, 215, 215);
+  width: auto; 
+  padding: 10px; 
+  border: none;
+  border-radius: 7px; 
+  height: 15px;
+  font-size: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px; 
+  transition: 0.2s; 
+  border-bottom: 2px solid transparent; 
+}
+.item-input input:focus{
+  border-radius: 2px; 
+  border-bottom: 2px solid blue; 
+  outline:none; 
 }
 
-.saveTodos-btn:focus{
-  outline: none;
+.item-input button{
+  padding: 5px; 
+  color: blue; 
+  margin-left: 20px; 
+  font-size: 20px; 
+  background-color: transparent;
+  border: none; 
+  border-radius: 7px; 
+  transition: 0.4s; 
+}
+.item-input button:hover{
+  cursor: pointer;
+  color: black; 
+  background-color: lightgrey
+}
+.item-input button:focus{
+  outline: none; 
+}
+
+
+.item-delete-btn{
+  grid-column-start: 2; 
+}
+
+
+.item-delete-btn button:hover{
+  cursor: pointer; 
+}
+
+@media screen and (max-width: 830px){
+  .todo-container{
+    width: auto;
+    margin-right: 15px;
+    margin-left: 15px;
+  }
 }

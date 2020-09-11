@@ -13,9 +13,12 @@ class Item extends React.Component{
   render(){
     return(
       <div className = 'item-container'>
+        <div className = "item-input">
         {this.state.editing?
           <Fragment>
-              <input value = {this.props.value}
+              <input 
+              size = "15"
+              value = {this.props.value}
                 onChange = {(e) => {
                 this.props.handleEditTodo(this.props.id, e)
               }}/>
@@ -24,14 +27,16 @@ class Item extends React.Component{
                   editing: false
                 })
               }}>OK</button>
+            
           </Fragment>
            :
-          <h3 onClick = {() => {
+          <p onClick = {() => {
               this.setState({
                 editing:true
               })
-            }}>{this.props.value}</h3>
+            }}>{this.props.value}</p>
         }
+        </div>
 
 
         <span className = "item-delete-btn">

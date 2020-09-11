@@ -21,18 +21,19 @@ class Home extends React.Component{
   handleDeleteTodo(id){
     var newTodos = this.state.todos
     newTodos.splice(id, 1);
-    console.log(id)
     this.setState({
       todos: newTodos
     })
+    this.handleSaveTodos()
   }
 
   handleCreateTodo(){
     const newTodos = this.state.todos;
-    newTodos.push("-");
+    newTodos.unshift("-");
     this.setState({
       todos: newTodos
     })
+    this.handleSaveTodos()
   }
 
   handleEditTodo(id, e){
@@ -41,6 +42,7 @@ class Home extends React.Component{
     this.setState({
       todos: newTodos
     })
+    this.handleSaveTodos()
   }
 
   async componentDidMount(){
@@ -70,9 +72,6 @@ class Home extends React.Component{
               value = {this.state.todos[i]}/>)
           })}
 
-          <div style = {{textAlign: 'center'}}>
-            <button className = 'saveTodos-btn' onClick = {this.handleSaveTodos}>Save</button>
-          </div>
         </div>
       </div>
     )
