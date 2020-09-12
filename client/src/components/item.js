@@ -10,6 +10,22 @@ class Item extends React.Component{
     }
   }
 
+  moveButtons = {
+    display: 'inline-block',
+    marginLeft: '20px'
+  }
+
+  upDown = {
+    fontSize: '17px',
+    display: 'inline-block',
+    marginLeft: '2px',
+    marginRight: '2px',
+  }
+
+  todoMessage = {
+    display: 'inline-block'
+  }
+
   render(){
     return(
       <div className = 'item-container'>
@@ -30,11 +46,27 @@ class Item extends React.Component{
             
           </Fragment>
            :
-          <p onClick = {() => {
+           <Fragment>
+          <p style = {this.todoMessage} 
+          onClick = {() => {
               this.setState({
                 editing:true
               })
             }}>{this.props.value}</p>
+          
+          <div style = {this.moveButtons}>
+            
+          <button onClick = {() => {
+            this.props.handleMoveTodo(this.props.id, true)
+          }}
+          style = {this.upDown}>∧</button>
+          <button 
+          onClick = {() => {
+            this.props.handleMoveTodo(this.props.id, false)
+          }}
+          style = {this.upDown}>∨</button>
+          </div>
+          </Fragment>
         }
         </div>
 
